@@ -87,3 +87,64 @@ body{
     width: 40%;
     margin-left: 30%;
   }
+  #croppedImage2{
+    height:70%; 
+    width: 40%;
+    margin-left: 30%;
+  }
+
+  #modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 25%;
+    top: 17%;
+    width: 60%;
+    height: 90%;
+   
+   
+  }
+  
+  #modal-content {
+    margin: auto;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  
+  #modal-close {
+    display: flex;
+    align-self: flex-end;
+    color: #aaa;
+    
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .thirdContainer img{
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .thirdContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 0.4rem;
+  }
+   .thirdContainer button{
+      background-color: #FFFFFF;
+      color: black;
+      font-weight: 300;border-radius: 5px;
+      border: 1px solid gray;
+
+   }
