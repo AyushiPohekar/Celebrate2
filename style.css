@@ -97,7 +97,7 @@ body{
     mask-size: 60%;
   }
   #modal-canvas{
-    
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +112,7 @@ body{
   @media only screen and (max-width: 767px) {
     #croppedImage2{
       height:400px;
-      width: 400px;
+      width: 380px;
       object-fit: cover;
      
     }
