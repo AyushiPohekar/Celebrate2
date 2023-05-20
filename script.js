@@ -1,7 +1,10 @@
 const imageUpload = document.getElementById("imageUpload");
 const customButton = document.getElementById("customButton");
 const previewContainer = document.getElementById("previewContainer");
-const btns=document.getElementById("btns")
+const btns=document.getElementById("btns");
+const cropButton = document.getElementById("cropButton");
+
+const rotateButton = document.getElementById("rotateButton");
 let cropper;
 
 imageUpload.addEventListener("change", function () {
@@ -41,3 +44,21 @@ imageUpload.addEventListener("change", function () {
       reader.readAsDataURL(file);
     }
   });
+
+
+  cropButton.addEventListener("click", function () {
+    const croppedImageData = cropper.getCroppedCanvas().toDataURL("image/jpeg");
+    const croppedImage = document.createElement("img");
+    croppedImage.id = "croppedImage";
+    croppedImage.src = croppedImageData;
+  
+    previewContainer.innerHTML = "";
+    previewContainer.appendChild(croppedImage);
+  
+  
+  });
+  
+  rotateButton.addEventListener("click", function () {
+    cropper.rotate(90);
+  });
+  

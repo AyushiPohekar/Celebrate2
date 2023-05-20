@@ -13,7 +13,17 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" integrity="sha512-0SPWAwpC/17yYyZ/4HSllgaK7/gg9OlVozq8K7rf3J8LvCjYEEIfzzpnA2/SSjpGIunCSD18r3UhvDcu/xncWA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
 
@@ -30,7 +40,10 @@
               </div>
         <div class="thirdContainer">
             <div id="previewContainer" style="display: none;">
-                <div id="btns">crop,flip,rotate</div>
+                <div id="btns">
+                    <i class="fa-sharp fa-solid fa-expand" id="cropButton"></i>
+                    <i class="fa-sharp fa-solid fa-rotate" id="rotateButton"></i>
+                </div>
             </div>
         </div>
         <div class="thirdContainer">
