@@ -5,6 +5,20 @@ const btns=document.getElementById("btns");
 const cropButton = document.getElementById("cropButton");
 const modalContent=document.getElementById("modal-content")
 const rotateButton = document.getElementById("rotateButton");
+const circleimg = document.getElementById("circleimg");
+const rectangleimg = document.getElementById("rectangleimg");
+const heartimg = document.getElementById("heartimg");
+const squareimg = document.getElementById("squareimg");
+const modal = document.getElementById('modal');
+const modalCanvas = document.getElementById('modal-canvas');
+const originalbtn=document.getElementById("originalbtn")
+let currentShape;
+
+
+
+
+
+
 let cropper;
 
 imageUpload.addEventListener("change", function () {
@@ -64,9 +78,7 @@ imageUpload.addEventListener("change", function () {
   });
 
   function openModal(cropData) {
-    var modal = document.getElementById('modal');
-    var modalCanvas = document.getElementById('modal-canvas');
-  
+ 
   
   
     
@@ -86,5 +98,52 @@ imageUpload.addEventListener("change", function () {
   function closeModal() {
     var modal = document.getElementById('modal');
     modal.style.display = 'none';
+  }
+  
+  circleimg.addEventListener("click",function(){
+   
+    currentShape = circleimg.ariaValueText;
+   
+    applyShape(currentShape);
+  })
+  rectangleimg.addEventListener("click",function(){
+    
+    currentShape = rectangleimg.ariaValueText;
+    applyShape(currentShape);
+  })
+  heartimg.addEventListener("click",function(){
+
+    currentShape = heartimg.ariaValueText;
+    applyShape(currentShape);
+  })
+  squareimg.addEventListener("click",function(){
+  
+    currentShape = squareimg.ariaValueText;
+    applyShape(currentShape);
+  })
+  originalbtn.addEventListener("click",function(){
+  
+    currentShape = originalbtn.value;
+    applyShape(currentShape);
+  })
+
+  function applyShape(shape) {
+    
+    const previewImage = modalCanvas.querySelector("img");
+  
+    console.log(previewImage)
+    const maskImageUrl = `/asset/${shape}.png`;
+    
+   
+    if (shape === "original") {
+        
+        previewImage.style.webkitMaskImage = "none";
+        previewImage.style.maskImage = "none";
+      } else {
+        previewImage.style.webkitMaskImage = `url(${maskImageUrl})`;
+        previewImage.style.maskImage = `url(${maskImageUrl})`;
+       
+      }
+ 
   }
   
