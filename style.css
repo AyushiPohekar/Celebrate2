@@ -55,9 +55,22 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+ 
+
   }
  
   #previewImage{
     height:70%; 
-    width: 20%
+    width: 20%;
+  
+
+  }
+  #btns{
+    z-index: 1;
+    background-color: #007663;
+    position: absolute;
+    top:0;
+    right:0;
+    
   }
