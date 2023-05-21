@@ -12,7 +12,13 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" integrity="sha512-0SPWAwpC/17yYyZ/4HSllgaK7/gg9OlVozq8K7rf3J8LvCjYEEIfzzpnA2/SSjpGIunCSD18r3UhvDcu/xncWA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"
+      integrity="sha512-0SPWAwpC/17yYyZ/4HSllgaK7/gg9OlVozq8K7rf3J8LvCjYEEIfzzpnA2/SSjpGIunCSD18r3UhvDcu/xncWA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -26,70 +32,76 @@
     ></script>
   </head>
   <body>
-
-    <div class=" containerdiv">
-        <div class="navbar containernav">
-            Add image/icon
+    <div class="containerdiv">
+      <div class="navbar containernav">Add image/icon</div>
+      <div class="secondContainer">
+        <div class="innerseconddiv">
+          <p>Upload Image</p>
+          <label for="imageUpload" id="customButton">Choose From Device</label>
+          <input type="file" id="imageUpload" accept="image/*" />
         </div>
-        <div class="secondContainer">
-            <div class="innerseconddiv">
-                <p>Upload Image</p>
-                <label for="imageUpload" id="customButton">Choose From Device</label>
-                <input type="file" id="imageUpload" accept="image/*" />
-              </div>
-              </div>
-        <div class="thirdContainer">
-            <div id="previewContainer" style="display: none;">
-                <div id="btns">
-                    <i class="fa-sharp fa-solid fa-expand" id="cropButton"></i>
-                    <i class="fa-sharp fa-solid fa-rotate" id="rotateButton"></i>
-                   <button id="flipbtnX">FX</button>
-                   <button id="flipbtnY">FY</button>
-                    
-                   
-                </div>
-            </div>
-        </div>
-        <!-- <div class="thirdContainer">
-           <img src="/asset/circle.png" id="circleimg">
-           <img src="/asset/rectangle.png" id="rectangleimg">
-           <img src="/asset/heart.png" id="heartimg">
-        </div> -->
-        <div id="modal">
-       
-            <div id="modal-content">
-                <span id="modal-close" onclick="closeModal()">&times;</span>
-              
-             <p class="text-center">Uploaded Image</p>
-              
-             <div id="modal-canvas"></div>
-             <div class="thirdContainer">
-                <button value="original" id="originalbtn">Original</button>
-                <img src="/asset/circle.png" id="circleimg" aria-valuetext="circle">
-                <img src="/asset/rectangle.png" id="rectangleimg" aria-valuetext="rectangle">
-                <img src="/asset/heart.png" id="heartimg" aria-valuetext="heart">
-                <img src="/asset/square.png" id="squareimg" aria-valuetext="square">
-             </div>
-            </div>
+      </div>
+      <div class="thirdContainer">
+        <div id="previewContainer" style="display: none">
+          <div id="btns">
+            <i class="fa-sharp fa-solid fa-expand" id="cropButton"></i>
+            <i class="fa-sharp fa-solid fa-rotate" id="rotateButton"></i>
+            <button id="flipbtnX">FX</button>
+            <button id="flipbtnY">FY</button>
           </div>
-       
+        </div>
+      </div>
+
+      <div id="modal">
+        <div id="modal-content">
+          <span id="modal-close" onclick="closeModal()">&times;</span>
+
+          <p class="text-center">Uploaded Image</p>
+
+          <div id="modal-canvas"></div>
+          <div class="thirdContainer">
+            <button value="original" id="originalbtn">Original</button>
+            <img
+              src="/asset/circle.png"
+              id="circleimg"
+              aria-valuetext="circle"
+            />
+            <img
+              src="/asset/rectangle.png"
+              id="rectangleimg"
+              aria-valuetext="rectangle"
+            />
+            <img src="/asset/heart.png" id="heartimg" aria-valuetext="heart" />
+            <img
+              src="/asset/square.png"
+              id="squareimg"
+              aria-valuetext="square"
+            />
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js" integrity="sha512-6lplKUSl86rUVprDIjiW8DuOniNX8UDoRATqZSds/7t6zCQZfaCe3e5zcGaQwxa8Kpn5RTM9Fvl3X2lLV4grPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"
-  ></script>
+      src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"
+      integrity="sha512-6lplKUSl86rUVprDIjiW8DuOniNX8UDoRATqZSds/7t6zCQZfaCe3e5zcGaQwxa8Kpn5RTM9Fvl3X2lLV4grPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <script src="script.js"></script>
   </body>
