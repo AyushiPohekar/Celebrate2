@@ -12,7 +12,12 @@ const squareimg = document.getElementById("squareimg");
 const modal = document.getElementById('modal');
 const modalCanvas = document.getElementById('modal-canvas');
 const originalbtn=document.getElementById("originalbtn")
+const flipbtnX=document.getElementById("flipbtnX")
+const flipbtnY=document.getElementById("flipbtnY")
+const croppedImage = document.createElement("img");
 let currentShape;
+var toggleY=1;
+var toggleX=1;
 
 
 
@@ -46,7 +51,11 @@ imageUpload.addEventListener("change", function () {
             viewMode: 1,
             dragMode: "move",
             autoCropArea: 0.8,
-          
+            minContainerHeight:400,
+            minContainerWidth:300,
+            minCanvasHeight:400,
+            minCanvasWidth:400
+           
           });
 
 
@@ -62,7 +71,7 @@ imageUpload.addEventListener("change", function () {
 
   cropButton.addEventListener("click", function () {
     const croppedImageData = cropper.getCroppedCanvas().toDataURL("image/jpeg");
-    const croppedImage = document.createElement("img");
+   
     croppedImage.id = "croppedImage";
     croppedImage.src = croppedImageData;
   
@@ -76,14 +85,20 @@ imageUpload.addEventListener("change", function () {
   rotateButton.addEventListener("click", function () {
     cropper.rotate(90);
   });
+  flipbtnX.addEventListener("click", function () {
+    toggleX=toggleX*-1;
+    cropper.scaleX(toggleX);
+  })
+  flipbtnY.addEventListener("click", function () {
+    toggleY=toggleY*-1;
+    cropper.scaleY(toggleY);
+    // cropper.translate(-toggleY*5)
+
+  
+  })
 
   function openModal(cropData) {
- 
-  
-  
-    
-  
-    const croppedImage2 = document.createElement("img");
+ const croppedImage2 = document.createElement("img");
     croppedImage2.id = "croppedImage2";
     croppedImage2.src = cropData;
     modalCanvas.innerHTML="";
